@@ -1,0 +1,13 @@
+[package]
+name = "dialoguemaker/use-keybind-continue"
+version = "0.1.0-patch-1"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+repository = "https://github.com/DialogueMaker/use-keybind-continue"
+authors = ["Christian Toney <christian.toney@beastslash.com>"]
+include = ["src", "src/**/*.lua", "wally.toml", "default.project.json"]
+exclude = ["**"]
+
+[dependencies]
+react = "jsdotlua/react@17.2.1"
+dialogue-client-types = "dialoguemaker/dialogue-client-types@0.1.0"
