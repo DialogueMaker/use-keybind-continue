@@ -10,4 +10,4 @@ exclude = ["**"]
 
 [dependencies]
 react = "jsdotlua/react@17.2.1"
-dialogue-client-types = "dialoguemaker/dialogue-client-types@0.1.0"
+dialogue-client-types = "dialoguemaker/dialogue-client-types@0.1.0-patch-1"
