@@ -3,9 +3,8 @@
 local ContextActionService = game:GetService("ContextActionService");
 local UserInputService = game:GetService("UserInputService");
 
-local React = require(script.Parent.react);
-
-local IDialogueClient = require(script.Parent["dialogue-client-types"]);
+local React = require("@pkg/react");
+local IDialogueClient = require("@pkg/dialogue_client_types");
 
 type DialogueClient = IDialogueClient.DialogueClient;
 
@@ -19,7 +18,7 @@ function useKeybindContinue(dialogueClient: DialogueClient, continueDialogueFunc
 
     if continueKey or continueKeyGamepad then
 
-      local function checkKeybinds(keybind: Enum.KeyCode)
+      local function checkKeybinds(_, _, keybind: InputObject)
 
         if keybind and not UserInputService:IsKeyDown(continueKey) and not UserInputService:IsKeyDown(continueKeyGamepad) then
 
