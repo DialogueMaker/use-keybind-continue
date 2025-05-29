@@ -3,8 +3,9 @@
 local ContextActionService = game:GetService("ContextActionService");
 local UserInputService = game:GetService("UserInputService");
 
-local React = require("@pkg/react");
-local IDialogueClient = require("@pkg/dialogue_client_types");
+local packages = script.Parent.roblox_packages;
+local React = require(packages.react);
+local IDialogueClient = require(packages.dialogue_client_types);
 
 type DialogueClient = IDialogueClient.DialogueClient;
 
