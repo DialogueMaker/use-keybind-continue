@@ -5,17 +5,17 @@ local UserInputService = game:GetService("UserInputService");
 
 local packages = script.Parent.roblox_packages;
 local React = require(packages.react);
-local IDialogueClient = require(packages.dialogue_client_types);
+local IClient = require(packages.client_types);
 
-type DialogueClient = IDialogueClient.DialogueClient;
+type Client = IClient.Client;
 
-function useKeybindContinue(dialogueClient: DialogueClient, continueDialogueFunction: () -> ())
+function useKeybindContinue(client: Client, continueDialogueFunction: () -> ())
 
   React.useEffect(function(): ()
   
-    local dialogueClientSettings = dialogueClient:getSettings();
-    local continueKey = dialogueClientSettings.keybinds.interactKey;
-    local continueKeyGamepad = dialogueClientSettings.keybinds.interactKeyGamepad;
+    local clientSettings = client:getSettings();
+    local continueKey = clientSettings.keybinds.interactKey;
+    local continueKeyGamepad = clientSettings.keybinds.interactKeyGamepad;
 
     if continueKey or continueKeyGamepad then
 
@@ -39,7 +39,7 @@ function useKeybindContinue(dialogueClient: DialogueClient, continueDialogueFunc
 
     end;
 
-  end, {dialogueClient});
+  end, {client});
 
 end;
 
