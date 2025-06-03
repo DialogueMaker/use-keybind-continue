@@ -1,15 +1,14 @@
 --!strict
 
 local ContextActionService = game:GetService("ContextActionService");
-local UserInputService = game:GetService("UserInputService");
 
 local packages = script.Parent.roblox_packages;
 local React = require(packages.react);
-local IClient = require(packages.client_types);
+local DialogueMakerTypes = require(packages.dialogue_maker_types);
 
-type Client = IClient.Client;
+type Client = DialogueMakerTypes.Client;
 
-function useKeybindContinue(client: Client, continueDialogueFunction: () -> ())
+function useKeybindContinue(client: Client, continueDialogue: () -> ())
 
   React.useEffect(function(): ()
   
@@ -19,11 +18,11 @@ function useKeybindContinue(client: Client, continueDialogueFunction: () -> ())
 
     if continueKey or continueKeyGamepad then
 
-      local function checkKeybinds(_, _, keybind: InputObject)
+      local function checkKeybinds(_, inputState: Enum.UserInputState)
 
-        if keybind and not UserInputService:IsKeyDown(continueKey) and not UserInputService:IsKeyDown(continueKeyGamepad) then
+        if inputState == Enum.UserInputState.Begin then
 
-          continueDialogueFunction();
+          continueDialogue();
 
         end;
 
