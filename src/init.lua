@@ -12,9 +12,8 @@ function useKeybindContinue(client: Client, continueDialogue: () -> ())
 
   React.useEffect(function(): ()
   
-    local clientSettings = client:getSettings();
-    local continueKey = clientSettings.keybinds.interactKey;
-    local continueKeyGamepad = clientSettings.keybinds.interactKeyGamepad;
+    local continueKey = client.settings.keybinds.interactKey;
+    local continueKeyGamepad = client.settings.keybinds.interactKeyGamepad;
 
     if continueKey or continueKeyGamepad then
 
