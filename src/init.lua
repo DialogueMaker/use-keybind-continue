@@ -4,7 +4,7 @@ local ContextActionService = game:GetService("ContextActionService");
 
 local packages = script.Parent.roblox_packages;
 local React = require(packages.react);
-local DialogueMakerTypes = require(packages.dialogue_maker_types);
+local DialogueMakerTypes = require(packages.DialogueMakerTypes);
 
 type Client = DialogueMakerTypes.Client;
 
