@@ -37,7 +37,7 @@ function useKeybindContinue(client: Client, continueDialogue: () -> ())
 
     end;
 
-  end, {client});
+  end, {client :: unknown, continueDialogue});
 
 end;
 
